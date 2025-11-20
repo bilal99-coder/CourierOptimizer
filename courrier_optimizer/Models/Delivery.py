@@ -2,7 +2,7 @@ from Models import BaseEntity, Courrier, Customer, DeliveryMode
 from datetime import datetime
 
 class Delivery(BaseEntity):
-    def __init__(self, id, created, last_updated, start_point: str, end_point: str, price: float, last_price: float, delivered_at: datetime, courrier: Courrier, urgency: float, mode: DeliveryMode, customer: Customer):
+    def __init__(self, id, created, last_updated, start_point: str, end_point: str, price: float, last_price: float, delivered_at: datetime, courrier: Courrier, urgency: float, mode: DeliveryMode, customer: Customer, weight_kg: float):
         super().__init__(id, created, last_updated)
         self.start_point = start_point
         self.end_point = end_point
@@ -13,3 +13,4 @@ class Delivery(BaseEntity):
         self.urgency = urgency
         self.customer = customer
         self.mode = mode # Car, Bicycle, or Walk
+        self.weight_kg = weight_kg
