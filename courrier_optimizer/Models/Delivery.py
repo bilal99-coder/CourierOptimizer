@@ -1,4 +1,7 @@
-from Models import BaseEntity, Courrier, Customer, DeliveryMode
+from Models.BaseEntity import BaseEntity
+from Models.Courrier import Courrier
+from Models.Customer import Customer
+from Models.DeliveryMode import DeliveryMode
 from datetime import datetime
 
 class Delivery(BaseEntity):
