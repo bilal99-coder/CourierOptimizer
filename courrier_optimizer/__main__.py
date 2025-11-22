@@ -8,20 +8,33 @@ def main():
     # Load environment variables from .env file.
     load_dotenv()
 
+    """START BY GREETING THE USER AND ASK FOR THE USER NAME"""
     greeting = os.getenv("GREETING_MESSAGE_AND_ASK_ABOUT_NAME", "Good day, what is your name?")
     name_of_user = input(greeting + " ")
-    print(f"Hello, {name_of_user}!")
 
-    ask_about_start_depot = os.getenv(
+    if name_of_user:
+        print(f"Hello, {name_of_user}!")
+    else:
+        name_of_user = os.getenv("DEFAULT_USER")
+
+    """ASK ABOUT THE START DEPOT"""
+    ask_about_start__stop_depot = os.getenv(
         "ASK_ABOUT_START_DEPOT",
-        "Nice to meet you {name_of_user}! Please provide the start depot coordinates (or press Enter for default)",
+        "Please provide the start & stop depot coordinates (or press Enter for default)",
     )
-    start_depot = input(ask_about_start_depot.format(name_of_user=name_of_user) + " ")
+    fixed_depot = input(ask_about_start__stop_depot.format(name_of_user=name_of_user) + " ")
+    if fixed_depot == "":
+        fixed_depot = os.getenv("DEFAULT_START_STOP_DEPOT")
+        print(f"Your start and stop depot is set to: {fixed_depot} " )
+    elif fixed_depot:
+        print(f"Your start and stop depot is set to: {fixed_depot} " )
 
-    if not start_depot:
-        end_depot = input("Could you please provide us with the stop depot cordinates? Please click Enter if you want to use the default stop point")
+    start_depot = stop_depot = fixed_depot
+
     csv_file = ReadCsvFile("input1.csv")
     inputs_from_input_csv = csv_file.readCsv()
+
+
     validate = Validate
     for record in inputs_from_input_csv:
         if validate.validate_name(record.customer):
