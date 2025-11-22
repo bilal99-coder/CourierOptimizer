@@ -17,6 +17,5 @@ class ReadCsvFile():
                     priority=Priority.HIGH,
                     longitude=row['longitude']
                     )
-            objects.append(input)
-        print(len(objects))
+                objects.append(input)
         return objects
