@@ -60,7 +60,7 @@ class Validate:
     def validate_inputDTO(self, record: InputDTO) -> bool:
         return (
             Validate.validate_is_none_negative(record.weight_kg)
-            & Validate.validate_name(record.customer)
-            & Validate.validate_match_enum(Priority, record.priority)
-            & Validate.is_valid_gps_cordinate(record.latitude, record.longitude)
+            and Validate.validate_name(record.customer)
+            and Validate.validate_match_enum(Priority, record.priority)
+            and Validate.is_valid_gps_cordinate(record.latitude, record.longitude)
         )
