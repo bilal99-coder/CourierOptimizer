@@ -5,7 +5,7 @@ class FileService():
     def __init__(self):
         pass
 
-    def load_inputs(self, file_path:str) -> list[input]:
+    def load_inputs(self, file_path:str) -> list[inputDTO]:
         objects = []
         with open(file= file_path, newline='', encoding='utf-8', errors="ignore") as csvfile:
             reader = csv.DictReader(csvfile, delimiter=";")
