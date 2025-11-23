@@ -37,14 +37,21 @@ def main():
     start_depot = stop_depot = fixed_depot
 
     """Ask about the input csv file"""
-    input_csv_file_path = input("Could you please provide us with the file path to your input.csv file. (or press Enter for default)")
+    input_csv_file_path = input(
+        "Could you please provide us with the file path to your input.csv file. (or press Enter for default)"
+    )
 
+    """if the user did not provided a file path to input csv file then use the default path"""
     if not input_csv_file_path:
-        print("The file path used is the default file path") # fix
+        print("The file path used is the default file path")  # fix
         input_csv_file_path = "input.csv"
 
-    #check if the file path provided by the user is valid
-
+    """check if the file path provided by the user is valid. Give the user maximum 3 tries to give a valid path"""
+    tries = 1
+    while not os.path.isfile(input_csv_file_path) & tries < 3:
+        input_csv_file_path = input(
+            "The file provided by you is not valid. Try again {tries}/3:"
+        )
 
     file_service = FileService()
     inputs_from_csv = file_service.load_inputs("input.csv")
