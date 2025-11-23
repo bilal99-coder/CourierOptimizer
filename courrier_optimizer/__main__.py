@@ -38,23 +38,29 @@ def main():
 
     """Ask about the input csv file"""
     input_csv_file_path = input(
-        "Could you please provide us with the file path to your input.csv file. (or press Enter for default)"
+        "Could you please provide us with the file path to your input csv file. (or press Enter for default) "
     )
 
     """if the user did not provided a file path to input csv file then use the default path"""
     if not input_csv_file_path:
-        print("The file path used is the default file path")  # fix
-        input_csv_file_path = "input.csv"
+        print("The file path used is set to the default file path")
+        input_csv_file_path = os.getenv("DEFAULT_INPUT_CSV_PATH")
 
     """check if the file path provided by the user is valid. Give the user maximum 3 tries to give a valid path"""
     tries = 1
-    while not os.path.isfile(input_csv_file_path) & tries < 3:
+    total_tries = os.getenv("GET_FILE_PATH_TOTAL_TRIES")
+    while (not os.path.isfile(input_csv_file_path)) | tries <= total_tries:
         input_csv_file_path = input(
-            "The file provided by you is not valid. Try again {tries}/3:"
+            f"The file provided by you is not valid. Try again {tries}/{total_tries}:"
+        )
+        tries += 1
+    if not os.path.isfile(input_csv_file_path):
+        print(
+            f"All the attempts to get a valid path file were not successful. The input csv file will be set to default: {os.getenv("DEFAULT_INPUT_CSV_PATH")}"
         )
 
     file_service = FileService()
-    inputs_from_csv = file_service.load_inputs("input.csv")
+    inputs_from_csv = file_service.load_inputs(input_csv_file_path)
 
     validate = Validate
     rejected_inputs = []
