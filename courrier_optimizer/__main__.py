@@ -1,6 +1,6 @@
 import os
 from dotenv import load_dotenv
-from courrier_optimizer.Services.CsvFileService import FileService
+from Services.CsvFileService import FileService
 from Utils.Validate import Validate
 
 
