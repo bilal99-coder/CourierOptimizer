@@ -1,6 +1,6 @@
 from Models.Delivery import Delivery
 from Models.Priority import Priority
-from enum import Enum, EnumMeta
+from enum import EnumMeta
 from DTO import InputDTO
 import re
 
@@ -50,4 +50,17 @@ class Validate:
             Validate.validate_is_none_negative(record.weight_kg)
             & Validate.validate_name(record.customer)
             & Validate.validate_match_enum(Priority, record.priority)
+            # & Validate.
         )
+
+    def is_valid_gps_cordinate(latitude: str, longitude: str) -> bool:
+        try:
+            lat = float(latitude)
+            lon = float(longitude)
+
+            if -90 <= lat <= 90 & -180 <= lon <= 180:
+                return True
+            else:
+                return False
+        except ValueError:
+            return False
