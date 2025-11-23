@@ -1,6 +1,6 @@
 import os
 from dotenv import load_dotenv
-from Services.ReadCsvFile import ReadCsvFile
+from Services.ReadCsvFile import FileService
 from Utils.Validate import Validate
 
 
@@ -31,18 +31,20 @@ def main():
 
     start_depot = stop_depot = fixed_depot
 
-    csv_file = ReadCsvFile("input1.csv")
-    inputs_from_input_csv = csv_file.readCsv()
+    file_service= FileService()
+    inputs_from_csv = file_service.load_inputs("input.csv")
 
 
     validate = Validate
-    for record in inputs_from_input_csv:
+    rejected_inputs = []
+    for record in inputs_from_csv:
         if validate.validate_name(record.customer):
             print("OK")
         else:
-            print("Not Ok")
-        print(record)
+            print(record)
+            rejected_inputs.append(record)
 
+    file_service.write_rejected_inputs(file_path="rejected.csv", data=rejected_inputs)
 
 if __name__ == '__main__':
     main()
