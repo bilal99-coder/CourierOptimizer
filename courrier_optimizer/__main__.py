@@ -3,7 +3,6 @@ from dotenv import load_dotenv
 from Services.CsvFileService import FileService
 from Utils.Validate import Validate
 
-
 def main():
     """Load environment variables from .env file."""
     load_dotenv()
@@ -76,8 +75,8 @@ def main():
             print("Not OK!")
             rejected_inputs.append(record)
 
-    "Append non valid input rows to rejected.csv"
-    file_service.write_rejected_inputs(file_path="rejected.csv", data=rejected_inputs, mode="a")
+    "write non valid input rows to rejected.csv"
+    file_service.write_rejected_inputs(file_path=os.getenv("DEFAULT_OUTPUT_CSV_PATH"), data=rejected_inputs, mode="a")
 
 
 if __name__ == "__main__":

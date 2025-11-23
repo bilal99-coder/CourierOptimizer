@@ -32,9 +32,11 @@ class Validate:
     Returns True if the value is valid, False otherwise.
     """
 
-    def validate_match_enum(a: EnumMeta, value_to_check: str) -> bool:
+    def validate_match_enum(a: EnumMeta, value_to_check) -> bool:
         """checks if a raw value matches any value of the enum class a"""
         try:
+            if isinstance(value_to_check, a):
+                return True
             a(value_to_check)
             return True
         except ValueError:
