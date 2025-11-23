@@ -45,14 +45,6 @@ class Validate:
     def validate_name(customer_name: str) -> bool:
         return re.fullmatch("[A-Za-z]{2,25}( [A-Za-z]{2,25})?", customer_name)
 
-    def validate_inputDTO(self, record: InputDTO) -> bool:
-        return (
-            Validate.validate_is_none_negative(record.weight_kg)
-            & Validate.validate_name(record.customer)
-            & Validate.validate_match_enum(Priority, record.priority)
-            # & Validate.
-        )
-
     def is_valid_gps_cordinate(latitude: str, longitude: str) -> bool:
         try:
             lat = float(latitude)
@@ -64,3 +56,11 @@ class Validate:
                 return False
         except ValueError:
             return False
+
+    def validate_inputDTO(self, record: InputDTO) -> bool:
+        return (
+            Validate.validate_is_none_negative(record.weight_kg)
+            & Validate.validate_name(record.customer)
+            & Validate.validate_match_enum(Priority, record.priority)
+            & Validate.is_valid_gps_cordinate(record.latitude, record.longitude)
+        )
