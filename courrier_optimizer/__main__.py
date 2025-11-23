@@ -76,7 +76,8 @@ def main():
             print("Not OK!")
             rejected_inputs.append(record)
 
-    file_service.write_rejected_inputs(file_path="rejected.csv", data=rejected_inputs)
+    "Append non valid input rows to rejected.csv"
+    file_service.write_rejected_inputs(file_path="rejected.csv", data=rejected_inputs, mode="a")
 
 
 if __name__ == "__main__":

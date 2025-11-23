@@ -1,6 +1,7 @@
 import csv
 from Models.Priority import Priority
 from DTO.InputDTO import inputDTO
+from dataclasses import asdict
 class FileService():
     def __init__(self):
         pass
@@ -20,9 +21,10 @@ class FileService():
                 objects.append(input)
         return objects
 
-    def write_rejected_inputs(self, file_path:str, data:list[inputDTO]):
-        with open(file=file_path, newline='', encoding='utf-8', errors="ignore", mode="w") as csvfile:
-            headers = ['customer', 'latitude', 'longitude', 'priority', 'weight_kg']
+    def write_rejected_inputs(self, file_path:str, data:list[inputDTO], mode:str):
+        with open(file=file_path, newline="", encoding="utf-8", errors="ignore", mode=mode) as csvfile:
+            rows = [asdict(record) for record in data]
+            headers = ["customer", "latitude", "longitude", "priority", "weight_kg"]
             writer = csv.DictWriter(csvfile, fieldnames=headers)
             writer.writeheader()
-            writer.writerows(data)
+            writer.writerows(rows)
