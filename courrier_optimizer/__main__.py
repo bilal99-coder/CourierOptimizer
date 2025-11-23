@@ -36,6 +36,16 @@ def main():
 
     start_depot = stop_depot = fixed_depot
 
+    """Ask about the input csv file"""
+    input_csv_file_path = input("Could you please provide us with the file path to your input.csv file. (or press Enter for default)")
+
+    if not input_csv_file_path:
+        print("The file path used is the default file path") # fix
+        input_csv_file_path = "input.csv"
+
+    #check if the file path provided by the user is valid
+
+
     file_service = FileService()
     inputs_from_csv = file_service.load_inputs("input.csv")
 
