@@ -2,6 +2,7 @@ import os
 from dotenv import load_dotenv
 from Services.CsvFileService import FileService
 from Utils.Validate import Validate
+from Services.DeliveryService import DeliveryService
 
 def main():
     """Load environment variables from .env file."""
@@ -24,6 +25,9 @@ def main():
         "ASK_ABOUT_START_DEPOT",
         "Please provide the start & stop depot coordinates (or press Enter for default)",
     )
+
+    """The start and stop depot are fixed to the same latitude and longitude"""
+
     fixed_depot = input(
         ask_about_start_stop_depot.format(name_of_user=name_of_user) + " "
     )
@@ -67,16 +71,22 @@ def main():
     inputs_from_csv = file_service.load_inputs(input_csv_file_path)
 
     validate = Validate()
+    delivery_service = DeliveryService()
     rejected_inputs = []
+    valid_deliveries = []
     for record in inputs_from_csv:
         if validate.validate_inputDTO(record):
             print("OK")
+            valid_deliveries.append(record)
         else:
             print("Not OK!")
             rejected_inputs.append(record)
 
     "write non valid input rows to rejected.csv"
     file_service.write_rejected_inputs(file_path=os.getenv("DEFAULT_OUTPUT_CSV_PATH"), data=rejected_inputs, mode="a")
+
+    delivery_service.sort_by_urgency()
+
 
 
 if __name__ == "__main__":

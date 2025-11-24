@@ -17,3 +17,4 @@ class Delivery(BaseEntity):
         self.customer = customer
         self.mode = mode # Car, Bicycle, or Walk
         self.weight_kg = weight_kg
+
