@@ -6,9 +6,10 @@ class Customer(BaseEntity):
         super().__init__(id, created, last_updated)
         self.credit_card_number = credit_card_number
         self.customer_number = customer_number
-        
+
         self.person = person
 
-    def get_name(self) -> str:
+    def get_name(self) -> str | None:
         if (self.person != None):
             return f"{self.person.first_name} {self.person.last_name}"
+        return None

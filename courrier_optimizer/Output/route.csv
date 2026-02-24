@@ -1,0 +1,4 @@
+stop,customer,latitude,longitude,priority,distance_from_prev_km,cumulative_distance_km,eta,cost_nok,co2_g
+1,Bilal,59.91,10.73,0.6,1.112,1.112,00:18,4.45,133.4
+2,Anna,59.92,10.74,1,1.244,2.355,00:19,4.98,149.3
+3,Erik,59.9,10.72,1.2,2.488,4.843,00:22,9.95,298.5

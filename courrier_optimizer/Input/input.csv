@@ -1,3 +1,5 @@
-customer;latitude;longitude;priority;weight_kg
-bilal_sahli;0;0;high;2.0
-7652ÆÅ?0++3q;0;0;high;1.0
+﻿customer;latitude;longitude;priority;weight_kg
+Bilal;59.91;10.73;High;2.0
+Anna;59.92;10.74;Medium;1.5
+Erik;59.90;10.72;Low;3.0
+InvalidCustomer123;59.89;10.71;High;1.0

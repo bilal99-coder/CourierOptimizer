@@ -1,0 +1,48 @@
+2026-02-23 23:58:03,390 - INFO - Running optimize with args: () and kwargs: {}
+2026-02-23 23:58:03,394 - INFO - Starting Courier Optimizer Application ...
+2026-02-24 00:01:37,572 - INFO - Running optimize with args: () and kwargs: {}
+2026-02-24 00:01:37,577 - INFO - Starting Courier Optimizer Application ...
+2026-02-24 00:03:10,032 - WARNING - Skipping invalid row {'\ufeffcustomer': 'Bilal', 'latitude': '59.91', 'longitude': '10.73', 'priority': 'high', 'weight_kg': '2.0', 'courrier_delivery_mode': 'BIKE'}: 'customer'
+2026-02-24 00:03:10,033 - WARNING - Skipping invalid row {'\ufeffcustomer': 'Anna', 'latitude': '59.92', 'longitude': '10.74', 'priority': 'medium', 'weight_kg': '1.5', 'courrier_delivery_mode': 'CAR'}: 'customer'
+2026-02-24 00:03:10,034 - WARNING - Skipping invalid row {'\ufeffcustomer': 'Erik', 'latitude': '59.90', 'longitude': '10.72', 'priority': 'low', 'weight_kg': '3.0', 'courrier_delivery_mode': 'WALK'}: 'customer'
+2026-02-24 00:03:10,035 - WARNING - Skipping invalid row {'\ufeffcustomer': 'InvalidCustomer123', 'latitude': '59.89', 'longitude': '10.71', 'priority': 'high', 'weight_kg': '1.0', 'courrier_delivery_mode': 'BIKE'}: 'customer'
+2026-02-24 00:03:37,476 - INFO - Running optimize with args: () and kwargs: {}
+2026-02-24 00:03:37,479 - INFO - Starting Courier Optimizer Application ...
+2026-02-24 00:04:13,199 - WARNING - Skipping invalid row {'customer': 'InvalidCustomer123', 'latitude': '59.89', 'longitude': '10.71', 'priority': 'high', 'weight_kg': '1.0', 'courrier_delivery_mode': 'BIKE'}: Invalid input data. Please check the values and try again.
+2026-02-24 00:07:42,773 - INFO - Running optimize with args: () and kwargs: {}
+2026-02-24 00:07:42,774 - INFO - Starting Courier Optimizer Application ...
+2026-02-24 00:07:55,295 - WARNING - Skipping invalid row {'customer': 'InvalidCustomer123', 'latitude': '59.89', 'longitude': '10.71', 'priority': 'high', 'weight_kg': '1.0', 'courrier_delivery_mode': 'BIKE'}: Invalid input data. Please check the values and try again.
+2026-02-24 00:08:17,790 - INFO - Running optimize with args: () and kwargs: {}
+2026-02-24 00:08:17,794 - INFO - Starting Courier Optimizer Application ...
+2026-02-24 00:08:41,124 - WARNING - Skipping invalid row {'customer': 'InvalidCustomer123', 'latitude': '59.89', 'longitude': '10.71', 'priority': 'high', 'weight_kg': '1.0', 'courrier_delivery_mode': 'BIKE'}: Invalid input data. Please check the values and try again.
+2026-02-24 00:09:23,491 - INFO - Running optimize with args: () and kwargs: {}
+2026-02-24 00:09:23,495 - INFO - Starting Courier Optimizer Application ...
+2026-02-24 00:09:37,925 - WARNING - Skipping invalid row {'customer': 'InvalidCustomer123', 'latitude': '59.89', 'longitude': '10.71', 'priority': 'high', 'weight_kg': '1.0', 'courrier_delivery_mode': 'BIKE'}: Invalid input data. Please check the values and try again.
+2026-02-24 00:09:37,929 - INFO - Start Time: 2026-02-24 00:09:23.492488
+2026-02-24 00:09:37,931 - INFO - End Time: 2026-02-24 00:09:37.929787
+2026-02-24 00:09:37,931 - INFO - Parameters: {'param1': 'value1', 'param2': 'value2'}
+2026-02-24 00:09:37,932 - INFO - Skipped Rows: []
+2026-02-24 00:09:37,933 - INFO - Final Totals: {'total_deliveries': 0, 'total_distance': 0}
+2026-02-24 00:09:37,935 - INFO - Finished optimize in 14.437299 seconds
+2026-02-24 00:10:40,797 - INFO - Running optimize with args: () and kwargs: {}
+2026-02-24 00:10:40,800 - INFO - Starting Courier Optimizer Application ...
+2026-02-24 00:10:48,954 - INFO - Running optimize with args: () and kwargs: {}
+2026-02-24 00:10:48,957 - INFO - Starting Courier Optimizer Application ...
+2026-02-24 00:10:56,447 - WARNING - Skipping invalid row {'customer': 'InvalidCustomer123', 'latitude': '59.89', 'longitude': '10.71', 'priority': 'high', 'weight_kg': '1.0', 'courrier_delivery_mode': 'BIKE'}: Invalid input data. Please check the values and try again.
+2026-02-24 00:10:56,449 - INFO - Start Time: 2026-02-24 00:10:48.956286
+2026-02-24 00:10:56,449 - INFO - End Time: 2026-02-24 00:10:56.449970
+2026-02-24 00:10:56,450 - INFO - Parameters: {'user': 'bilal', 'depot': '59.919623259249505,10.73539475497721', 'input_file': 'Input/input.csv'}
+2026-02-24 00:10:56,450 - INFO - Skipped Rows: []
+2026-02-24 00:10:56,451 - INFO - Final Totals: {'total_deliveries': 3, 'total_distance': 256.0}
+2026-02-24 00:10:56,452 - INFO - Finished optimize in 7.493684 seconds
+2026-02-24 00:16:15,948 - INFO - Running optimize with args: () and kwargs: {}
+2026-02-24 00:16:15,951 - INFO - Starting Courier Optimizer Application ...
+2026-02-24 00:17:21,555 - WARNING - Skipping invalid row {'customer': 'InvalidCustomer123', 'latitude': '59.89', 'longitude': '10.71', 'priority': 'High', 'weight_kg': '1.0'}: Invalid input data. Please check the values and try again.
+2026-02-24 00:17:21,556 - INFO - Loaded 3 valid, 0 rejected rows.
+2026-02-24 00:17:21,562 - INFO - route.csv written to Output/route.csv (3 stops)
+2026-02-24 00:17:21,564 - INFO - Start Time: 2026-02-24 00:16:15.948811
+2026-02-24 00:17:21,565 - INFO - End Time: 2026-02-24 00:17:21.564422
+2026-02-24 00:17:21,565 - INFO - Parameters: {'user': 'echo "bilal', 'depot': '59.919623259249505,10.73539475497721', 'mode': 'CAR', 'objective': 'fastest', 'input_file': 'Input/input.csv'}
+2026-02-24 00:17:21,566 - INFO - Skipped Rows: []
+2026-02-24 00:17:21,566 - INFO - Final Totals: {'total_deliveries': 3, 'total_distance_km': 3.72, 'total_time_h': 0.07, 'total_cost_nok': 14.87, 'total_co2_g': 446.0}
+2026-02-24 00:17:21,568 - INFO - Finished optimize in 65.615611 seconds
